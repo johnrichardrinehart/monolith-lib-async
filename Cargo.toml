@@ -28,10 +28,11 @@ chrono = "0.4.20" # Used for formatting creation timestamp
 clap = "3.2.16"
 cssparser = "0.29.6"
 encoding_rs = "0.8.31"
-html5ever = "0.24.1"
+html5ever = "0.26.0"
 percent-encoding = "2.1.0"
 sha2 = "0.10.2" # Used for calculating checksums during integrity checks
 url = "2.2.2"
+markup5ever_rcdom = "0.2.0"
 
 # Used for parsing srcset and NOSCRIPT
 [dependencies.regex]

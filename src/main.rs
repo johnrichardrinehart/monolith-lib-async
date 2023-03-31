@@ -1,5 +1,5 @@
 use encoding_rs::Encoding;
-use html5ever::rcdom::RcDom;
+use markup5ever_rcdom::RcDom;
 use reqwest::blocking::Client;
 use reqwest::header::{HeaderMap, HeaderValue, USER_AGENT};
 use std::collections::HashMap;
@@ -11,11 +11,18 @@ use std::time::Duration;
 use url::Url;
 
 use monolith::html::{
-    add_favicon, create_metadata_tag, get_base_url, get_charset, has_favicon, html_to_dom,
-    serialize_document, set_base_url, set_charset, walk_and_embed_assets,
+    create_metadata_tag,
+    get_base_url,
+    get_charset,
+    html_to_dom,
+    // add_favicon, create_metadata_tag, get_base_url, get_charset, has_favicon, html_to_dom,
+    serialize_document,
+    set_base_url,
+    set_charset,
+    walk_and_embed_assets,
 };
 use monolith::opts::Options;
-use monolith::url::{create_data_url, resolve_url};
+use monolith::url::resolve_url;
 use monolith::utils::retrieve_asset;
 
 enum Output {
@@ -288,6 +295,7 @@ fn main() {
         dom = set_base_url(&dom.document, new_base_url);
     }
 
+    /*
     // Request and embed /favicon.ico (unless it's already linked in the document)
     if !options.no_images
         && (target_url.scheme() == "http" || target_url.scheme() == "https")
@@ -313,6 +321,7 @@ fn main() {
             }
         }
     }
+    */
 
     // Save using specified charset, if given
     if let Some(custom_charset) = options.charset.clone() {
