@@ -4,10 +4,17 @@ on:
   push:
 
 jobs:
-  build:
+  legacy-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.5.0
       - uses: cachix/install-nix-action@v19
       - name: Building package
         run: nix-build . -A packages.x86_64-linux.default
+  flake-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.0
+      - uses: cachix/install-nix-action@v19
+      - name: Building package
+        run: nix build .
