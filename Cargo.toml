@@ -47,3 +47,11 @@ features = ["default-tls", "blocking", "gzip", "brotli", "deflate"]
 
 [dev-dependencies]
 assert_cmd = "2.0.4"
+
+[lib]
+name = "monolith"
+path = "src/lib.rs"
+
+[[bin]]
+name = "monolith"
+path = "src/main.rs"
